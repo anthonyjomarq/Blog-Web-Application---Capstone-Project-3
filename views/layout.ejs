@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      <%= typeof pageTitle !== 'undefined' ? pageTitle : 'Anthony Esports Blog'
+      %>
+    </title>
+    <link rel="stylesheet" href="/styles/main.css" />
+  </head>
+  <body>
+    <%- include("partials/header") %> <%- include("partials/nav") %>
+
+    <main><%- body %></main>
+
+    <%- include("partials/footer") %> <% if (typeof hasLightbox !== 'undefined'
+    && hasLightbox) { %>
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+      <span class="lightbox-close">&times;</span>
+      <img class="lightbox-image" src="" alt="Full-size image" />
+    </div>
+    <% } %>
+
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>
